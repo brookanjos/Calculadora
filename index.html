@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #afafaf;
+        }
+
+        .calculadora {
+            width: 300px;
+            background-color: #474747;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #campoEntrada {
+            width: 95%;
+            height: 50px;
+            font-size: 1.5em;
+            text-align: right;
+            padding-right: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            background-color: #a8a8a8;
+        }
+
+        .botao,
+        .operador {
+            width: 20%;
+            height: 50px;
+            font-size: 1.2em;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .operador {
+            background-color: #ff9800;
+        }
+
+        .especial {
+            background-color: #2196F3;
+            /* Azul para "=" */
+        }
+
+        .limpar {
+            background-color: #f44336;
+            /* Vermelho para "Limpar" */
+        }
+
+        #painel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculadora">
+        <input type="text" id="campoEntrada" readonly placeholder="0">
+        <div id="painel">
+            <button class="botao" onclick="adicionarNumero('1')">1</button>
+            <button class="botao" onclick="adicionarNumero('2')">2</button>
+            <button class="botao" onclick="adicionarNumero('3')">3</button>
+            <button class="operador" onclick="adicao()">+</button>
+
+            <button class="botao" onclick="adicionarNumero('4')">4</button>
+            <button class="botao" onclick="adicionarNumero('5')">5</button>
+            <button class="botao" onclick="adicionarNumero('6')">6</button>
+            <button class="operador" onclick="subtracao()">-</button>
+
+            <button class="botao" onclick="adicionarNumero('7')">7</button>
+            <button class="botao" onclick="adicionarNumero('8')">8</button>
+            <button class="botao" onclick="adicionarNumero('9')">9</button>
+            <button class="operador" onclick="multiplicacao()">*</button>
+
+            <button class="botao limpar" onclick="limparCampo()">C</button>
+            <button class="botao" onclick="adicionarNumero('0')">0</button>
+            <button class="botao especial" onclick="resultado()">=</button>
+            <button class="operador" onclick="divisao()">/</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
